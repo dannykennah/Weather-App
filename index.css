@@ -1,0 +1,246 @@
+body{
+  margin: 0!important;
+}
+.app-body{
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    right: 50%;
+}
+.form {
+  position: relative;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 385;
+  font-size: 2.2vw;
+}
+
+form input{
+  border-radius: 5px;
+  width: 20vw;
+  outline:none;
+  border:1px solid #bbb;
+  padding: 10px;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+       box-sizing:border-box;
+ -webkit-transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+   -ms-transition:0.2s ease all;
+    -o-transition:0.2s ease all;
+       transition:0.2s ease all;
+}
+form input[type=text]:focus{
+  border-color:rgba(169, 231, 247, 0.849);
+  
+}
+form input[type=submit]{
+  width: 10vw;
+  border: none;
+  cursor:pointer;
+  color: white;
+  
+}
+form input[type=submit]:hover{
+  background-color: rgba(169, 231, 247, 0.849);
+  
+}
+input[type="submit"]:active {
+	opacity:0.4;
+}
+
+.error-box{
+  height: 20px;
+
+}
+.error h6{
+  width: 15vw;
+  margin: 0 auto;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 385;
+  font-size: 1.5vw;
+  
+}
+
+
+.weather-container {
+    height: 100%;
+    position: relative;     
+    justify-content: center;
+    margin: 0 auto;
+}
+
+ video {
+  
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+ 
+}
+
+.weather-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2.2vw;
+  text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+  color: rgb(255, 255, 255);
+  height: 65%;
+  border-bottom: 1px solid white;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-data{
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2.2vw;
+  text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+  color: rgb(255, 255, 255);
+  height: 35%;
+  overflow: auto;
+}
+.weather-data::-webkit-scrollbar {
+  display: none;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+
+.weather-data h4{
+  margin-bottom: .9em;
+  margin-top: 0;
+}
+.weather-data p{
+  font-weight: 100;
+  margin: 0;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .form {
+    position: relative;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 385;
+    font-size: 5vw;
+  }
+  
+  .weather-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3.5vw;
+    text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+    color: rgb(255, 255, 255);
+    height: 60%;
+    border-bottom: 1px solid white;
+    
+  }
+  .weather-data{
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3vw;
+    text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+    color: rgb(255, 255, 255);
+    height: 40%;
+    overflow: auto;
+  }
+  form input[type=submit]{
+    width: 80%;
+    border: none;
+    cursor:pointer;
+    margin-bottom: 0;
+    
+  }
+ 
+  form input{
+    border-radius: 5px;
+    width: 80%;
+    outline:none;
+    border:1px solid #bbb;
+    padding: 10px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+         box-sizing:border-box;
+   -webkit-transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+     -ms-transition:0.2s ease all;
+      -o-transition:0.2s ease all;
+         transition:0.2s ease all;
+  }
+
+  .error h6{
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 385;
+    font-size: 3.5vw;
+    
+  }
+
+
+}
+
+@media only screen and (max-width: 499px) {
+  .weather-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 5vw;
+    text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+    color: rgb(255, 255, 255);
+    height: 60%;
+    border-bottom: 1px solid white;
+  }
+  .weather-data{
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4vw;
+    text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+    color: rgb(255, 255, 255);
+    height: 40%;
+    overflow: auto;
+  }
+  .form {
+    position: relative;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 385;
+    font-size: 5vw;
+  }
+
+  .error h6{
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 385;
+    font-size: 3.5vw;
+    
+  }
+
+
+}
