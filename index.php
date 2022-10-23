@@ -1,13 +1,6 @@
 
 <?php
-$fh = fopen('key.txt','r');
-while ($line = fgets($fh)) {
-  // <... Do your work with the line ...>
-  $apikey = $line;
-}
-fclose($fh);
-
-
+$apikey = "eeae4be2b869d5fe5cb98dfcc48dbcc4";
 $city = "London";
 
 if(isset($_POST['submit'])){
@@ -17,9 +10,7 @@ if(isset($_POST['submit'])){
 $url = "https://api.openweathermap.org/data/2.5/weather?q=" .$city. "&appid=".$apikey."&units=metric";
 $weatherdata = json_decode(@file_get_contents($url), true);
 
-if (strpos($http_response_header[0], "200")) { 
-    
- } else { 
+if (!strpos($http_response_header[0], "200")) { 
     $weatherdata = json_decode(file_get_contents("https://api.openweathermap.org/data/2.5/weather?q=london&appid=".$apikey."&units=metric"), true);
     $error = "Invalid city name";
  }
