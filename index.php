@@ -8,8 +8,6 @@ if(isset($_POST['submit'])){
     $city = $_POST['city'];
 }
 
-
-
 $url = "https://api.openweathermap.org/data/2.5/weather?q=" .$city. "&appid=".$apikey."&units=metric";
 $weatherdata = json_decode(@file_get_contents($url), true);
 
@@ -20,7 +18,19 @@ if (strpos($http_response_header[0], "200")) {
     $error = "Invalid city name";
  }
 
+$tmzoffset = $weatherdata['timezone'];
 
+$sunriseunix = $weatherdata['sys']['sunrise'];
+$sunsetunix = $weatherdata['sys']['sunset'];
+
+$tmz = timezone_name_from_abbr("",$tmzoffset,0);
+$dt = new DateTime('now', new DateTimeZone($tmz));
+
+$dt->setTimestamp($sunriseunix);
+$sunrise = $dt->format('H:i');
+
+$dt->setTimestamp($sunsetunix);
+$sunset = $dt->format('G:i');
 
 $high = round($weatherdata['main']['temp_max']).'°C';
 $low = round($weatherdata['main']['temp_min']).'°C';
@@ -29,13 +39,13 @@ $feels = round($weatherdata['main']['feels_like']).'°C';
 $pressure = $weatherdata['main']['pressure'].' hPa';
 $humidity = $weatherdata['main']['humidity'].'%';
 $wind = $weatherdata['wind']['speed'].' m/s';
-$sunrise = date('h:i ',$weatherdata['sys']['sunrise']);
-$sunset = date('G:i ',$weatherdata['sys']['sunset']);
+$clouds = $weatherdata['clouds']['all'].'%';
+$visibility = $weatherdata['visibility'].' km';
 $bgsrc = '';
 
 $weathermain = $weatherdata['weather'][0]['main'];
 if($weathermain =='Clouds'){
-    $bgsrc = './backgrounds/clouds.mp4'; 
+    $bgsrc = './backgrounds/haze.mp4'; 
 }elseif($weathermain =='Rain'){
     $bgsrc = './backgrounds/rains.mp4';
 }elseif($weathermain =='Thunderstorm'){
@@ -45,19 +55,20 @@ if($weathermain =='Clouds'){
 }elseif($weathermain =='Snow'){
     $bgsrc = './backgrounds/snow.mp4';
 }elseif($weathermain =='Clear'){
-    $bgsrc = './backgrounds/clouds.mp4';
+    $bgsrc = './backgrounds/clear.mp4';
 }elseif($weathermain =='Haze'){
-    $bgsrc = './backgrounds/clouds.mp4';
+    $bgsrc = './backgrounds/haze.mp4';
 }elseif($weathermain =='Mist'){
-    $bgsrc = './backgrounds/clouds.mp4';
+    $bgsrc = './backgrounds/fog.mp4';
+}elseif($weathermain =='Fog'){
+    $bgsrc = './backgrounds/fog.mp4';
 }
 
 
 
-// echo '<pre>';
-// print_r($weatherdata);
-// echo '</pre>';
-
+echo '<pre>';
+print_r($weatherdata);
+echo '</pre>';
 
 
 ?>
@@ -106,19 +117,17 @@ if($weathermain =='Clouds'){
                             <p>SUNRISE</p><h4><?= $sunrise ?></h4>
                             <p>PRESSURE</p><h4><?= $pressure ?></h4>
                             <p>WIND SPEED</p><h4><?= $wind ?></h4>
+                            <p>VISIBILITY</p><h4><?= $visibility ?></h4>
                         </div>
                         <div class="column">
                         <p>SUNSET</p><h4><?= $sunset ?></h4>
                         <p>FEELS LIKE</p><h4><?= $feels ?></h4>
                         <p>HUMIDITY</p><h4><?= $humidity ?></h4>
+                        <p>CLOUDS</p><h4><?= $clouds ?></h4>
                         </div>
                     </div>  
                 </div>
             </div>
         </div>
     </body>
-
-
-
-
 </hmtl>
