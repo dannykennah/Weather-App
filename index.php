@@ -1,7 +1,13 @@
 
 <?php
+$fh = fopen('key.txt','r');
+while ($line = fgets($fh)) {
+  // <... Do your work with the line ...>
+  $apikey = $line;
+}
+fclose($fh);
 
-$apikey = "eeae4be2b869d5fe5cb98dfcc48dbcc4";
+
 $city = "London";
 
 if(isset($_POST['submit'])){
@@ -64,13 +70,6 @@ if($weathermain =='Clouds'){
     $bgsrc = './backgrounds/fog.mp4';
 }
 
-
-
-echo '<pre>';
-print_r($weatherdata);
-echo '</pre>';
-
-
 ?>
 <style>
 <?php include 'index.css'; ?>
@@ -85,7 +84,15 @@ echo '</pre>';
         <meta content="width=device-width, initial-scale=1" name="viewport" />
     </head>
     <body>
+       
         <div class='app-body'>
+            <div class='git'>
+                <a href='https://github.com/dannykennah/Weather-App'>
+                    <button class='btn'>
+                            <img src="./github.png"></img>
+                    </button> 
+                </a>      
+            </div>
             <div class='form'> 
                 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" >
                     <label for="city">Find Your City:</label><br>
