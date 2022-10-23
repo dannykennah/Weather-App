@@ -45,7 +45,7 @@ $bgsrc = '';
 
 $weathermain = $weatherdata['weather'][0]['main'];
 if($weathermain =='Clouds'){
-    $bgsrc = './backgrounds/haze.mp4'; 
+    $bgsrc = './backgrounds/clouds.mp4'; 
 }elseif($weathermain =='Rain'){
     $bgsrc = './backgrounds/rains.mp4';
 }elseif($weathermain =='Thunderstorm'){
