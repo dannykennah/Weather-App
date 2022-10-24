@@ -54,12 +54,12 @@ form input[type=submit]{
   width: 10vw;
   border: none;
   cursor:pointer;
-  color: white;
+  color: rgb(80, 80, 80);
   
 }
 form input[type=submit]:hover{
   background-color: rgba(169, 231, 247, 0.849);
-  
+  color: white;
 }
 input[type="submit"]:active {
 	opacity:0.4;
@@ -216,7 +216,21 @@ input[type="submit"]:active {
 
 }
 
-@media only screen and (max-width: 499px) {
+@media only screen and (max-width: 520px) {
+  .git{
+    content-visibility: hidden;
+  }
+  form input[type=submit]{
+    width: 80%;
+    border: none;
+    cursor:pointer;
+    color: whitesmoke;
+    background-color: #1094bd;
+    
+  }
+  input[type="submit"]:active {
+    opacity:0.4;
+  }
   .weather-header {
     z-index: 1;
     position: relative;
