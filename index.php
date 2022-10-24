@@ -100,7 +100,7 @@ if($weathermain =='Clouds'){
               
             </div>
             <div class='weather-container'>
-                <video autoplay muted loop class='video' playsinline>
+                <video autoplay muted loop class='video' preload="none" playsinline>
                     <source src=<?= $bgsrc?> type="video/mp4" >
                 </video>
                 <div class='weather-header'>
