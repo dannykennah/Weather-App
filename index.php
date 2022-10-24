@@ -54,11 +54,11 @@ if($weathermain =='Clouds'){
 }elseif($weathermain =='Thunderstorm'){
     $bgsrc = './backgrounds/lightninglw_Trim.mp4';
 }elseif($weathermain =='Drizzle'){
-    $bgsrc = './backgrounds/rain.mp4';
+    $bgsrc = './backgrounds/rains.mp4';
 }elseif($weathermain =='Snow'){
     $bgsrc = './backgrounds/snowvlc(1).mp4';
 }elseif($weathermain =='Clear'){
-    $bgsrc = './backgrounds/clear.mp4';
+    $bgsrc = './backgrounds/lightninglw_Trim.mp4';
 }elseif($weathermain =='Haze'){
     $bgsrc = './backgrounds/haze.mp4';
 }elseif($weathermain =='Mist'){
