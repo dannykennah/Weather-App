@@ -16,12 +16,18 @@ if (!strpos($http_response_header[0], "200")) {
  }
 
 $tmzoffset = $weatherdata['timezone'];
+if($tmzoffset == 21600){
+    $tmzoffset = 25200;
+}
 
 $sunriseunix = $weatherdata['sys']['sunrise'];
 $sunsetunix = $weatherdata['sys']['sunset'];
 
 $tmz = timezone_name_from_abbr("",$tmzoffset,0);
+
+
 $dt = new DateTime('now', new DateTimeZone($tmz));
+
 
 $dt->setTimestamp($sunriseunix);
 $sunrise = $dt->format('H:i');
@@ -46,19 +52,21 @@ if($weathermain =='Clouds'){
 }elseif($weathermain =='Rain'){
     $bgsrc = './backgrounds/rains.mp4';
 }elseif($weathermain =='Thunderstorm'){
-    $bgsrc = './backgrounds/lightning.mp4';
+    $bgsrc = './backgrounds/lightninglw_Trim.mp4';
 }elseif($weathermain =='Drizzle'){
     $bgsrc = './backgrounds/rain.mp4';
 }elseif($weathermain =='Snow'){
-    $bgsrc = './backgrounds/snow.mp4';
+    $bgsrc = './backgrounds/snowvlc(1).mp4';
 }elseif($weathermain =='Clear'){
     $bgsrc = './backgrounds/clear.mp4';
 }elseif($weathermain =='Haze'){
     $bgsrc = './backgrounds/haze.mp4';
 }elseif($weathermain =='Mist'){
-    $bgsrc = './backgrounds/fog.mp4';
+    $bgsrc = './backgrounds/foglw(1).mp4';
 }elseif($weathermain =='Fog'){
-    $bgsrc = './backgrounds/fog.mp4';
+    $bgsrc = './backgrounds/foglw(1).mp4';
+}elseif($weathermain =='Smoke'){
+    $bgsrc = './backgrounds/foglw(1).mp4';
 }
 
 ?>
