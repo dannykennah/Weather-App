@@ -58,7 +58,7 @@ if($weathermain =='Clouds'){
 }elseif($weathermain =='Snow'){
     $bgsrc = './backgrounds/snowvlc(1).mp4';
 }elseif($weathermain =='Clear'){
-    $bgsrc = './backgrounds/lightninglw_Trim.mp4';
+    $bgsrc = './backgrounds/clear.mp4';
 }elseif($weathermain =='Haze'){
     $bgsrc = './backgrounds/haze.mp4';
 }elseif($weathermain =='Mist'){
