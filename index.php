@@ -77,13 +77,13 @@ if($weathermain =='Clouds'){
     <body>
        
         <div class='app-body'>
-            <div class='git'>
+            <!-- <div class='git'>
                 <a href='https://github.com/dannykennah/Weather-App'>
                     <button class='btn'>
                             <img src="./github.png"></img>
                     </button> 
                 </a>      
-            </div>
+            </div> -->
             <div class='form'> 
                 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" >
                     <label for="city">Find Your City:</label><br>

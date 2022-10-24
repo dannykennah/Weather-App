@@ -45,6 +45,9 @@ form input{
    -ms-transition:0.2s ease all;
     -o-transition:0.2s ease all;
        transition:0.2s ease all;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+       appearance: none;
 }
 form input[type=text]:focus{
   border-color:rgba(169, 231, 247, 0.849);
@@ -54,7 +57,8 @@ form input[type=submit]{
   width: 10vw;
   border: none;
   cursor:pointer;
-  color: rgb(80, 80, 80);
+  background-color: #1094bd;
+  color: whitesmoke;
   
 }
 form input[type=submit]:hover{
@@ -217,15 +221,13 @@ input[type="submit"]:active {
 }
 
 @media only screen and (max-width: 520px) {
-  .git{
-    content-visibility: hidden;
-  }
   form input[type=submit]{
     width: 80%;
     border: none;
     cursor:pointer;
     color: whitesmoke;
     background-color: #1094bd;
+    
     
   }
   input[type="submit"]:active {
