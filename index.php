@@ -52,21 +52,21 @@ if($weathermain =='Clouds'){
 }elseif($weathermain =='Rain'){
     $bgsrc = './backgrounds/rains.mp4';
 }elseif($weathermain =='Thunderstorm'){
-    $bgsrc = './backgrounds/lightninglw_Trim.mp4';
+    $bgsrc = './backgrounds/lightning.mp4';
 }elseif($weathermain =='Drizzle'){
     $bgsrc = './backgrounds/rains.mp4';
 }elseif($weathermain =='Snow'){
-    $bgsrc = './backgrounds/snowvlc(1).mp4';
+    $bgsrc = './backgrounds/snow.mp4';
 }elseif($weathermain =='Clear'){
     $bgsrc = './backgrounds/clear.mp4';
 }elseif($weathermain =='Haze'){
     $bgsrc = './backgrounds/haze.mp4';
 }elseif($weathermain =='Mist'){
-    $bgsrc = './backgrounds/foglw(1).mp4';
+    $bgsrc = './backgrounds/fog.mp4';
 }elseif($weathermain =='Fog'){
-    $bgsrc = './backgrounds/foglw(1).mp4';
+    $bgsrc = './backgrounds/fog.mp4';
 }elseif($weathermain =='Smoke'){
-    $bgsrc = './backgrounds/foglw(1).mp4';
+    $bgsrc = './backgrounds/fog.mp4';
 }
 
 ?>
